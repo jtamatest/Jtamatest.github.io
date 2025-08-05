@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Origin Thai Bar and Cuisine</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body> 
+<!-- ข้อความกลางหน้าจอ -->
+<div class="main-text fade-in-text">
+  <h1>Welcome to<br>The Origin Thai Bar & Cuisine</h1>
+</div>
+  	
+
+<!-- section 1 video -->
+
+  <section class="video-background">
+  <video autoplay muted loop playsinline>
+    <source src="video/video01.MP4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="video-overlay"></div><!-- ตัวนี้ทำให้วิดีโอจาง -->
+</section>
+  
+ 
+
+<!-- section บทความ -->
+<section class="section02">
+  <div class="cheapter2">
+    <h2>About Us</h2>
+    <p id="about-us"></p> <!-- JavaScript จะใส่ข้อความตรงนี้ -->
+  </div>
+</section>
+
+<!-- section map -->
+<section id="section03map" class="section03">
+  <div class="sectionmap">      
+<h1> Hours: </h1>
+<p>	 Sunday - Thrusday  11:30am - 10:00pm </br>
+Friday & Saturday 11:30am - 11:00pm  </br>
+</p>
+<h1>Contact Us</h1>	  
+<p>	Tel : 999-000-0000 </p> 
+<h1>E-mail</h1>	  
+<p>	theoriginnc@gmail.com </p>  
+<h1>location</h1>	  
+<p>	 	519 Outlet Center Dr smithfield,NC 27577   </p> 
+ <!-- ใส่ iframe Google Map ตรงนี้ -->
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.032382246381!2d-78.3231638240589!3d35.5064008726236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ac141b421eeffd%3A0x306aad7c8e47f81e!2s519%20Outlet%20Center%20Dr%2C%20Smithfield%2C%20NC%2027577%2C%20USA!5e0!3m2!1sen!2sus!4v1722829482905!5m2!1sen!2sus"
+      width="100%"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+</section>
+
+
+
+
+
+
+
+<!-- location-->
+<div class="location-container">
+  <div class="location-list">
+    Smithfield ,NC
+  </div>
+  <a href="#section03map"
+    <button class="location-button">Visit Our Locations</button>
+  </a>
+</div>
+
+  
+<!-- logo header -->	
+<header>
+ <div class="logo">
+    <img src="images/logo_origin_02.svg" alt="Origin Thai Logo">
+  </div>    
+   <div class="menu-icon" onclick="toggleMenu()">
+      &#9776; <!-- Unicode hamburger menu -->
+  </div> 
+  
+  <!--  intragram Logo. -->
+  <div class="social-menu">
+  <a href="https://www.instagram.com/linglingkwong?igsh=MTlwNGpqbm5nbTczeA==" target="_blank">
+    <img src="images/intragramlogo.png" alt="Instagram" class="instagram-icon">
+  </a>
+ </div>
+  <!-- เมนูเต็มจอ -->
+  <nav id="menu" class="hidden-menu">
+    <div class="close-icon" onclick="toggleMenu()">×</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Menu</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Location</a></li>
+    </ul>
+  </nav>  
+</header>
+
+  <!-- เรียก script ที่แยกไว้ -->
+  <script src="script.js"></script>
+</body>
+
+

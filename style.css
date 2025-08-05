@@ -1,0 +1,286 @@
+
+/*
+body {
+  margin: 0;
+}
+*/
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+/********************************/
+
+
+
+
+
+
+/* กล่องข้อความกลางจอ */
+.main-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  color: #FADD84; /* สีเหลืองอ่อนแบบร้านคุณ */
+   font-size: clamp(1rem, 3vw, 3rem);
+  opacity: 0;
+  transition: opacity 5s ease;
+  font-weight: bold;
+  font-family: 'Georgia', serif; /* หรือฟอนต์ที่คุณชอบ */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* เงาดำช่วยให้อ่านง่ายขึ้น */
+}
+/* ให้เฟดขึ้นตอนโหลด */
+.fade-in-text.show {
+  opacity: 1;
+}
+
+
+/* ให้เฟดขึ้น */
+.fade-in-text.show {
+  opacity: 1;
+}
+/********************************/
+
+
+
+
+header {
+  /*background-color: #89310A; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  /*padding:20px;*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; 
+}
+
+.logo img {
+  height: 100px;    /* ปรับขนาดตามต้องการ เช่น 40px หรือ 30px */
+  width: auto;
+  margin: 10px 20px;  /* เว้นระยะจากขอบจอ */
+}
+/********************************/
+
+
+.menu-icon {
+  position: absolute;  /* ✅ อยู่ใน header แบบสัมพันธ์ */
+  top: 20px;
+  right: 20px;
+  font-size: 36px;
+  color: #88310A;  /* สีเข้มแบบโลโก้ */
+  cursor: pointer;
+  z-index: 1000;
+}
+/* ซ่อนเมนูเริ่มต้น */
+.hidden-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #89310A;
+  color: white;
+  z-index: 999;
+  flex-direction: column;
+  justify-content: flex-start;   
+  align-items: center;
+  padding-top: 100px;
+}
+.hidden-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.hidden-menu li {
+  margin: 25px 0; /* ✅ เพิ่มระยะห่างแต่ละเมนู */
+}
+.hidden-menu a {
+  text-decoration: none;
+  font-size: 36px;       /* ✅ ขนาดใหญ่ขึ้น */
+  color: #FADD84;        /* ✅ สีทองอ่อน */
+  font-family: 'Cinzel', serif;
+  transition: color 0.3s;
+}
+.hidden-menu a:hover {
+  color: #ffffff;
+}
+/* แสดงเมนูเมื่อมี class 'active' */
+.hidden-menu.active {
+  display: flex;
+}
+/********************************/
+
+
+/* close button */
+.close-icon {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 48px;       /* ✅ ขยายขนาด */
+  color: #FADD84;
+  cursor: pointer;
+  z-index: 1001;
+  font-weight: bold;
+  background: none;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.close-icon:hover {
+  transform: scale(1.2); /* เพิ่มเอฟเฟกต์เวลาชี้ */
+}
+
+.menu-icon.hide {
+  display: none;
+}
+/********************************/
+
+
+
+/****** Intragram *************/
+.social-menu {
+  position: fixed;
+  top: 30px;
+  right: 65px; /* ปรับให้ห่างจากขอบจอหรือข้างปุ่มสามขีด */
+  z-index: 1000;
+}
+
+.instagram-icon {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+/*  filter: brightness(0) saturate(100%) invert(15%) sepia(90%) saturate(800%) hue-rotate(355deg); /* ทำให้เป็นโทนสีน้ำตาลคล้ายในภาพ */
+  cursor: pointer;
+}
+
+/********************************/
+
+
+
+
+.video-background {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5); /* <== ตรงนี้แหละทำให้วิดีโอมืด */
+  z-index: 1;
+}
+
+
+/********************************/
+
+
+.location-container {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.location-list {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.location-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: white;
+  color: #88310A;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.location-button:hover {
+  background-color: #FADD84;
+  color: #1A1A1A;
+}
+
+/*********************/
+
+.section02 {
+  background-color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section02 h2 {
+  font-size: 2.5rem;
+  color: #88310A;
+  margin-bottom: 30px;
+}
+
+.section02 p {
+  font-size: 1.2rem;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+}
+/* ปรับสไตล์ข้อความ About Us */
+#about-us {
+  font-size: clamp(1.5rem, 2.5vw, 1.5rem);/* ขนาดใหญ่ขึ้น อ่านง่าย */
+  line-height: 1.8;           /* เว้นระยะห่างระหว่างบรรทัด */
+  color: #333333;             /* สีเทาเข้ม อ่านง่ายบนพื้นขาว */
+  max-width: 800px;           /* จำกัดความกว้างเพื่อไม่ให้ยาวเกินไป */
+  margin: 0 auto;             /* จัดให้อยู่กลาง */
+  padding: 20px;              /* เพิ่มช่องว่างรอบข้อความ */
+  text-align: center;         /* จัดข้อความตรงกลาง */
+  font-family: 'Segoe UI', sans-serif; /* ฟอนต์อ่านง่าย */
+}
+/****************************/
+
+.section03 {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.sectionmap {
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#section03map {
+  scroll-margin-top: 10px; /* เผื่อส่วน header ที่ fixed ไม่บัง */
+}
